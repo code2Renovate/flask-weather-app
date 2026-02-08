@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Page</title>
+  <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="../static/errorstyle.css">
+
+</head>
+
+<body>
+  <!-- Navbar-Start -->
+  <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary sticky-top mb-4" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand nav-logo" href="{{ url_for('index') }}">
+        <div class="image">
+          <img src="{{ url_for('static', filename='images/image.png') }}" style="width: 50px;" alt="">
+        </div>
+        <div class="weather">
+          <h1>Weather App</h1>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: flex-end;">
+        <div class="navbar-nav justify-content-center justify-content-lg-end w-100 text-center text-lg-end">
+          <a class="nav-link mx-4 active" aria-current="page" href="{{ url_for('index') }}">Home</a>
+          <a class="nav-link mx-4" href="{{ url_for('privacy') }}">Terms & conditions</a>
+          <a class="nav-link mx-4" href="{{ url_for('usage') }}">Usage Guide Lines</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar-End -->
+
+  <div class="container">
+    <div class="error">
+      <h1>{{ errorCode or 'Unknown Error' }}</h1>
+      <h3>{{ errorMessage or 'Something went wrong. Please try again later.' }}</h3>
+      <a href="/">Go Back Home</a>
+    </div>
+  </div>
+
+  <!-- Footer-Start -->
+  <footer style="background:#0d1117; color:#c9d1d9; padding: 40px 20px; font-family:sans-serif;">
+    <div style="max-width:1000px; margin:auto; text-align:center;">
+      <h2 style="font-size:24px; margin-bottom:10px;">🌦 WeatherNow</h2>
+      <p style="color:#8b949e; font-size:14px;">Accurate & real-time weather updates for your city.</p>
+
+      <p style="margin-top:10px; font-size:13px;"><strong>Showing Weather throughout the World</strong></p>
+      <div style="margin: 20px 0;">
+        <a href="{{ url_for('index') }}" style="margin: 0 10px; color: #58a6ff; text-decoration: none;">Home</a>
+        <a href="{{ url_for('usage') }}" style="margin: 0 10px; color: #58a6ff; text-decoration: none;">About</a>
+        <a href="{{ url_for('privacy') }}" style="margin: 0 10px; color: #58a6ff; text-decoration: none;">Privacy</a>
+      </div>
+      <div>
+        <a href="#" style="color:#58a6ff; text-decoration:none;">English</a> |
+        <a href="#" style="color:#58a6ff; text-decoration:none;">हिन्दी</a>
+      </div>
+      <div class="footer-icons" style="margin-top: 10px;">
+        <a href="https://twitter.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/24/733/733579.png"
+            alt="Twitter"></a>
+        <a href="https://instagram.com" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram"></a>
+        <a href="https://github.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/24/733/733553.png"
+            alt="GitHub"></a>
+        <a href="https://www.facebook.com/profile.php?id=61567091706514&mibextid=ZbWKwL" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+        <a href="https://www.linkedin.com/in/ranjan-kumar-595bb0351?trk=contact-info" target="_blank"><img
+            src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn"></a>
+      </div>
+      <div style="font-size:12px; color:#6e7681; margin-top:10px;">
+        Made with ❤️ in India | Powered by OpenWeatherMap API<br>
+        © 2025 WeatherNow. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <!-- Footer-End -->
+
+  <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+</body>
+
+</html>

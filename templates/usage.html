@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms & Conditions - Weather App</title>
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png')}}" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #c3cbbb;
+            color: #333;
+        }
+
+        nav div .nav-logo {
+            display: flex;
+            padding: 0;
+        }
+
+        nav div .nav-logo .image {
+            margin: 7px 4px;
+        }
+
+        nav div .nav-logo .weather {
+            margin: auto 7px;
+        }
+
+        nav div .nav-logo .weather h1 {
+            font-size: 1.8rem;
+            color: #ff5c5c;
+        }
+
+        nav .navbar-nav .nav-link {
+            font-size: 1.2rem !important;
+        }
+
+        nav .nav-link.active {
+            color: red !important;
+        }
+
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #6f9fe6;
+            color: #fff;
+            padding: 44px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 6.5rem auto;
+            padding: 20px;
+            background: #e6dcdc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            color: #0d1117;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            line-height: 1.6;
+        }
+
+        /* Small devices (phones) */
+        @media (max-width: 600px) {
+            main {
+                padding: 15px;
+                margin: 4.3rem 0.8rem;
+            }
+
+            #header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Medium devices (tablets) */
+        @media (min-width: 601px) and (max-width: 992px) {
+            main {
+                margin: 40px 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar-Start -->
+    <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand nav-logo" href="{{ url_for('index') }}">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='images/image.png') }}" style="width: 50px;" alt="">
+                </div>
+                <div class="weather">
+                    <h1>Weather App</h1>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: flex-end;">
+                <div class="navbar-nav justify-content-center justify-content-lg-end w-100 text-center text-lg-end">
+                    <a class="nav-link mx-4" href="{{ url_for('index') }}">Home</a>
+                    <a class="nav-link mx-4" href="{{ url_for('privacy') }}">Terms & conditions</a>
+                    <a class="nav-link mx-4 active" aria-current="page" href="{{ url_for('usage') }}">Usage Guide
+                        Lines</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar-End -->
+
+    <header>
+        <h1>Usage Guidelines for Weather App</h1>
+    </header>
+
+    <main>
+        <section>
+            <!-- <h2>1. Purpose of the App</h2> -->
+            <p>The guide will help you understand how to use the app and what to expect from its features.</p>
+        </section>
+
+        <section>
+            <h2>What the App does</h2>
+            <p>The weather App Provide live weather update for any city you search.</p>
+            <ul>
+                <li>
+                    Temperature(Current,Minimum,and Maximum)
+                </li>
+                <li>Humidity info (hummidity percentage,wind direction,and "feels like" Temperature)</li>
+                <li>Wind info(Wind Speed,Sunrise and Sunset Time)</li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h2>How to use the App</h2>
+            <ul>
+                <h3>1.Search The city</h3>
+                <li>Type the city name in the "search the city" input bar</li>
+                <li>Press Enter or Click the Search Icon</li>
+                <li>The Weather Info Will update instantly for the selected city</li>
+
+            </ul>
+        </section>
+
+        <section>
+            <ul>
+                <h3>2.Reading The Data:</h3>
+                <li>Temperature Card Show current Temperature,min/max values</li>
+                <li>Humidity Info:Display humidity % wind direction,and how the Temperature feels.</li>
+                <li>Wind Info Provide wind speed, sunrise and sunset times </li>
+
+            </ul>
+        </section>
+
+        <section class="contact">
+            <h2>Tips for Accurate Results</h2>
+            <ul>
+                <li>
+                    Always ensure you have an active internet connection.
+
+                </li>
+                <li> Make sure city names are spelled correctly.</li>
+                <li> The weather data is fetched in real-time, so allow a few seconds for updates.</li>
+            </ul>
+            </span>
+        </section>
+        <section>
+            <h2>Important Note</h2>
+            <ul>
+                <li>
+                    This app uses third-party weather APIs, so minor delays or inaccuracies might occur due to
+                    network
+                    or data
+                    provider issues.
+
+
+                </li>
+                <li>Weather can change rapidly; please do not rely on this app for critical safety decisions
+                    (like
+                    during storms
+                    or emergencies). </li>
+
+            </ul>
+            </span>
+        </section>
+    </main>
+
+    <!-- Footer-Start -->
+    <footer style="background:#0d1117; color:#c9d1d9; padding: 40px 20px; font-family:sans-serif;">
+        <div style="max-width:1000px; margin:auto; text-align:center;">
+            <h2 style="font-size:24px; margin-bottom:10px;">🌦 WeatherNow</h2>
+            <p style="color:#8b949e; font-size:14px;">Accurate & real-time weather updates for your city.</p>
+
+            <p style="margin-top:10px; font-size:13px;"><strong>Showing Weather throughout the World</strong></p>
+            <div style="margin: 20px 0;">
+                <a href="{{ url_for('index') }}" style="margin: 0 10px; color: #58a6ff; text-decoration: none;">Home</a>
+                <a href="{{ url_for('usage') }}"
+                    style="margin: 0 10px; color: #58a6ff; text-decoration: none;">About</a>
+                <a href="{{ url_for('privacy') }}"
+                    style="margin: 0 10px; color: #58a6ff; text-decoration: none;">Privacy</a>
+            </div>
+            <div>
+                <a href="#" style="color:#58a6ff; text-decoration:none;">English</a> |
+                <a href="#" style="color:#58a6ff; text-decoration:none;">हिन्दी</a>
+            </div>
+            <div class="footer-icons" style="margin-top: 10px;">
+                <a href="https://twitter.com" target="_blank"><img
+                        src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter"></a>
+                <a href="https://instagram.com" target="_blank"><img
+                        src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram"></a>
+                <a href="https://github.com" target="_blank"><img
+                        src="https://cdn-icons-png.flaticon.com/24/733/733553.png" alt="GitHub"></a>
+                <a href="https://www.facebook.com/profile.php?id=61567091706514&mibextid=ZbWKwL" target="_blank"><img
+                        src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+                <a href="https://www.linkedin.com/in/ranjan-kumar-595bb0351?trk=contact-info" target="_blank"><img
+                        src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn"></a>
+            </div>
+            <div style="font-size:12px; color:#6e7681; margin-top:10px;">
+                Made with ❤️ in India | Powered by OpenWeatherMap API<br>
+                © 2025 WeatherNow. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- Footer-End -->
+
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 # 🌦️ Flask Weather App
 
-A modern, responsive **Weather Web Application** built using **Flask**, **HTML**, **CSS**, **Bootstrap**, and a little **JavaScript**.  
+A modern, responsive **Weather Web Application** built using **Flask**, **HTML**, **CSS**, and **Bootstrap**.  
 The app fetches real-time weather data and dynamically switches between **Day Mode** and **Night Mode** based on the local time of the searched city.
 
 ---
@@ -63,7 +63,6 @@ Shown when an invalid city is entered or the API request fails.
 - HTML5
 - CSS3
 - Bootstrap
-- JavaScript (basic)
 
 ### API
 - Visual Crossing Weather API (real-time weather data)
@@ -99,7 +98,7 @@ WEATHER-APP-PROJECT/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/flask-weather-app.git
+git clone https://github.com/code2Renovate/flask-weather-app.git
 cd flask-weather-app
 ```
 
@@ -123,12 +122,23 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 5️⃣ Run the application
+### 5️⃣ Get your free Visual Crossing API key
+- 1. Go to [Visual Crossing Weather API](https://www.visualcrossing.com/weather-api)
+- 2. Sign up for a free account
+- 3. Copy your API key
+ 
+### 6️⃣ Add your API key
+- Open app.py
+- Replace the placeholder in this line:
+- API_KEY = "<YOUR_API_KEY>"
+- Paste your API key between the quotes.
+
+### 7️⃣ Run the application
 ```bash
 python app.py
 ```
 
-### Open your browser and visit:
+### 8️⃣ Open your browser and visit:
 ```bash
 http://127.0.0.1:5000/
 ```

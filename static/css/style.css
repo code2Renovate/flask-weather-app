@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: #fff;
+}
+
+#header {
+    display: flex;
+}
+
+nav div .nav-logo {
+    display: flex;
+    padding: 0;
+}
+
+nav div .nav-logo .image {
+    margin: 7px 4px;
+}
+
+nav div .nav-logo .weather {
+    margin: auto 7px;
+}
+
+nav div .nav-logo .weather h1 {
+    font-size: 1.8rem;
+    color: #ff5c5c;
+}
+
+nav .navbar-nav .nav-link {
+    font-size: 1.2rem !important;
+}
+
+nav .nav-link.active {
+    color: red !important;
+}
+
+.card {
+    background-color: black;
+}
+
+.card div h1 {
+    margin-top: 4rem;
+}
+
+@media (max-width: 760px) {
+    .card div h1 {
+        margin-top: 0.5rem;
+    }
+}
+
+.white-text {
+    color: white;
+}
+
+.searchbar {
+    background-position: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 5%;
+    margin-bottom: 3rem;
+    justify-content: center;
+    background-size: cover;
+}
+
+.search {
+    width: 100%;
+    max-width: 650px;
+    background-color: rgb(186, 186, 238);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+
+}
+
+.search input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 13px 9px;
+    font-size: 20px;
+    color: rgb(13, 36, 28);
+    width: 100%;
+}
+
+::placeholder {
+    color: rgb(28, 91, 91);
+}
+
+.search button img {
+    width: 20px;
+}
+
+.search button {
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: #8799fc;
+    cursor: pointer;
+}

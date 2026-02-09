@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png')}}" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <!-- Navbar-Start -->
+    <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary sticky-top mb-4" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand nav-logo" href="{{ url_for('index') }}">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='images/image.png') }}" style="width: 50px;" alt="">
+                </div>
+                <div class="weather">
+                    <h1>Weather App</h1>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: flex-end;">
+                <div class="navbar-nav justify-content-center justify-content-lg-end w-100 text-center text-lg-end">
+                    <a class="nav-link mx-4 active" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                    <a class="nav-link mx-4" href="{{ url_for('privacy') }}">Terms & conditions</a>
+                    <a class="nav-link mx-4" href="{{ url_for('usage') }}">Usage Guide Lines</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar-End -->
+
+    <div class="card">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal  white-text">Weather for {{ weather.city }} </h1>
+        </div>
+        <div class="container py-3">
+            <main>
+                <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm  border-primary">
+                            <div class="card-header py-3 white-text text-bg-primary border-primary">
+                                <h4 class="my-0 fw-normal">Temperature</h4>
+                            </div>
+                            <div class="card-body white-text">
+                                <h1 class="card-title pricing-card-title ">{{ weather.temp }}<small
+                                        class="text-white fw-light ">&deg;C</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Temperature is {{ weather.temp }}<small
+                                            class="text-white fw-light ">&deg;C</small></li>
+                                    <li>Min Temperature is {{ weather.tempmin }}<small
+                                            class="text-white fw-light ">&deg;C</small></li>
+                                    <li>Max Temperature is {{ weather.tempmax }}<small
+                                            class="text-white fw-light ">&deg;C</small></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                            <div class="card-header py-3 text-bg-primary border-primary">
+                                <h4 class="my-0 fw-normal white-text">Humidity Info</h4>
+                            </div>
+                            <div class="card-body white-text">
+                                <h1 class="card-title pricing-card-title">{{ weather.humidity }}<small
+                                        class="text-white fw-light ">%</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>Wind Degree is {{ weather.winddir }}<small
+                                            class="text-white fw-light ">&deg;</small></li>
+                                    <li>Feels Like {{ weather.feelslike }}<small
+                                            class="text-white fw-light ">&deg;C</small></li>
+                                    <li>Humidity is {{ weather.humidity }}%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                            <div class="card-header py-3 text-bg-primary border-primary">
+                                <h4 class="my-0 fw-normal white-text">Wind Info</h4>
+                            </div>
+                            <div class="card-body white-text">
+                                <h1 class="card-title pricing-card-title">{{ weather.windspeed }}<small
+                                        class="text-white fw-light ">km/hr</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>wind speed is {{ weather.windspeed }}km/hr</li>
+                                    <li>Sunrise Time is {{ weather.sunriseTime }}am</li>
+                                    <li>Sunset Time is {{ weather.sunsetTime }}pm</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="searchbar">
+            <form action="/" method="POST" class="search">
+                <input type="text" placeholder="Search The City" name="searchCity" required>
+                <button type="submit"><img src="{{ url_for('static', filename='images/image2.png') }}"></button>
+            </form>
+
+        </div>
+
+        <!-- Footer-Start -->
+        <footer style="background:#0d1117; color:#c9d1d9; padding: 40px 20px; font-family:sans-serif;">
+            <div style="max-width:1000px; margin:auto; text-align:center;">
+                <h2 style="font-size:24px; margin-bottom:10px;">🌦 WeatherNow</h2>
+                <p style="color:#8b949e; font-size:14px;">Accurate & real-time weather updates for your city.</p>
+
+                <p style="margin-top:10px; font-size:13px;"><strong>Showing Weather throughout the World</strong></p>
+                <div style="margin: 20px 0;">
+                    <a href="{{ url_for('index') }}"
+                        style="margin: 0 10px; color: #58a6ff; text-decoration: none;">Home</a>
+                    <a href="{{ url_for('usage') }}"
+                        style="margin: 0 10px; color: #58a6ff; text-decoration: none;">About</a>
+                    <a href="{{ url_for('privacy') }}"
+                        style="margin: 0 10px; color: #58a6ff; text-decoration: none;">Privacy</a>
+                </div>
+                <div>
+                    <a href="#" style="color:#58a6ff; text-decoration:none;">English</a> |
+                    <a href="#" style="color:#58a6ff; text-decoration:none;">हिन्दी</a>
+                </div>
+                <div class="footer-icons" style="margin-top: 10px;">
+                    <a href="https://twitter.com" target="_blank"><img
+                            src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter"></a>
+                    <a href="https://instagram.com" target="_blank"><img
+                            src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram"></a>
+                    <a href="https://github.com" target="_blank"><img
+                            src="https://cdn-icons-png.flaticon.com/24/733/733553.png" alt="GitHub"></a>
+                    <a href="https://www.facebook.com/profile.php?id=61567091706514&mibextid=ZbWKwL"
+                        target="_blank"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"
+                            alt="Facebook"></a>
+                    <a href="https://www.linkedin.com/in/ranjan-kumar-595bb0351?trk=contact-info" target="_blank"><img
+                            src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn"></a>
+                </div>
+                <div style="font-size:12px; color:#6e7681; margin-top:10px;">
+                    Made with ❤️ in India | Powered by Visual Crossing Weather API<br>
+                    © 2025 WeatherNow. All rights reserved.
+                </div>
+            </div>
+        </footer>
+        <!-- Footer-End -->
+
+        <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+</body>
+
+</html>

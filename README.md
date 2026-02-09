@@ -129,9 +129,10 @@ pip install -r requirements.txt
  
 ### 6️⃣ Add your API key
 - Open app.py
-- Replace the placeholder in this line:
-- API_KEY = "<YOUR_API_KEY>"
-- Paste your API key between the quotes.
+- Replace the placeholder with your key:
+```python
+API_KEY = "<YOUR_API_KEY>"
+```
 
 ### 7️⃣ Run the application
 ```bash

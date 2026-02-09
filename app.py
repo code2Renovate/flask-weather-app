@@ -5,8 +5,14 @@ import requests
 
 app = Flask(__name__)
 
+# ⚡ Replace this with your own API key
+API_KEY = "<YOUR_API_KEY>"
+
 def get_Weather(searchCity):
-    url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{searchCity}?unitGroup=us&key=6E8UAWY68C8GLU7MKYSWSG3PL&contentType=json"
+    """
+    Fetch weather data for a given city using "Visual Crossing API".
+    """
+    url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{searchCity}?unitGroup=us&key={API_KEY}&contentType=json"
     response = requests.get(url, timeout=5)
 
     if response.status_code == 200:

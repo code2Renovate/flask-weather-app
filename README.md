@@ -123,9 +123,9 @@ pip install -r requirements.txt
 ```
 
 ### 5️⃣ Get your free Visual Crossing API key
-- 1. Go to [Visual Crossing Weather API](https://www.visualcrossing.com/weather-api)
-- 2. Sign up for a free account
-- 3. Copy your API key
+- Go to [Visual Crossing Weather API](https://www.visualcrossing.com/weather-api)
+- Sign up for a free account
+- Copy your API key
  
 ### 6️⃣ Add your API key
 - Open app.py
